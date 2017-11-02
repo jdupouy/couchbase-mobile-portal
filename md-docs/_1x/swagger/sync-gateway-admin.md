@@ -13,4 +13,4 @@ The API explorer below groups all the endpoints by functionality. You can click 
 
 ### API Explorer
 
-{% include swagger.html name="sync-gateway-admin" versions=page.versions %}
+{% include swagger.html name="sync-gateway-admin" versions=page.versions current=site.sg_version %}

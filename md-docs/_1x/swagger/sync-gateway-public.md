@@ -28,4 +28,4 @@ You can also send a request to each endpoint against an instance of Sync Gateway
 
 ### API Explorer
 
-{% include swagger.html name="sync-gateway-public" versions=page.versions %}
+{% include swagger.html name="sync-gateway-public" versions=page.versions current=site.sg_version %}

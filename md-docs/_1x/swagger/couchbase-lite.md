@@ -12,4 +12,4 @@ The API explorer below groups all the endpoints by functionality. You can click 
 
 ### API Explorer
 
-{% include swagger.html name="couchbase-lite" versions=page.versions %}
+{% include swagger.html name="couchbase-lite" versions=page.versions current=site.cbl_version %}

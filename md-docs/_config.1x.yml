@@ -6,6 +6,8 @@ collections:
     output: true
     permalink: /:path:output_ext
 version: '1.x'
+cbl_version: '1.4'
+sg_version: '1.5'
 package_version: '1.4.0'
 sg_download_link: 'http://packages.couchbase.com/releases/couchbase-sync-gateway/1.4.1/'
 sg_package_name: 'couchbase-sync-gateway-community_1.4.1-3_x86_64'
