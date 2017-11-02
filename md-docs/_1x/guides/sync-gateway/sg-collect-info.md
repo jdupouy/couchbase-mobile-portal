@@ -4,7 +4,7 @@ title: SG Collect Info
 permalink: guides/sync-gateway/sgcollect-info/index.html
 ---
 
-With this release comes a new command line utility called `sgcollect_info` that provides us with detailed statistics for a specific node. Run `sgcollect_info` on each node individually, not on all simultaneously.
+With the Sync Gateway 1.3 release, comes a new command line utility called `sgcollect_info` that provides us with detailed statistics for a specific node. Run `sgcollect_info` on each node individually, not on all simultaneously.
 
 Outputs:
 
