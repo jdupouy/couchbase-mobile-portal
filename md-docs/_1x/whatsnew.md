@@ -105,7 +105,7 @@ The following tutorial demonstrates the extended attributes support introduced i
 		<div class="column size-1of2">
 			<div class="box">
 				<div class="container">
-					<a href="http://docs.couchbase.com/tutorials/travel-sample-mobile.html" taget="_blank">
+					<a href="http://docs.couchbase.com/tutorials/travel-sample/">
 						<p style="text-align: center;">Travel Sample Mobile</p>
 					</a>
 				</div>
