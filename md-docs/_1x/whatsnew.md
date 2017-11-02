@@ -45,18 +45,18 @@ This new feature was made opt-in primarily out of consideration for existing cus
 
 The reference to the configuration API changes can be found below.
 
-- [$dbname.enable\_shared\_bucket\_access](../1.4/guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-enable_shared_bucket_access) to enable convergence for a given database.
-- [$dbname.import\_docs](../1.4/guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-import_docs) to give a particular Sync Gateway node the role of importing the documents.
-- [$dbname.import\_filter](../1.4/guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-import_filter) to select which document(s) to make aware to mobile clients.
+- [$dbname.enable\_shared\_bucket\_access](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-enable_shared_bucket_access) to enable convergence for a given database.
+- [$dbname.import\_docs](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-import_docs) to give a particular Sync Gateway node the role of importing the documents.
+- [$dbname.import\_filter](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-import_filter) to select which document(s) to make aware to mobile clients.
 
 When this feature is enabled, the REST API will include the following changes.
 
-- Sync Gateway purging ([/{db}/_purge](../1.4/references/sync-gateway/admin-rest-api/index.html?v=1.5#/document/post__db___purge)) removes the document and its associated extended attributes.
-- Sync Gateway document expiry (PUT [/{db}/{docid}](../1.4/references/sync-gateway/admin-rest-api/index.html?v=1.5#/document/put__db___doc_)) will tombstone the active revision.
+- Sync Gateway purging ([/{db}/_purge](references/sync-gateway/admin-rest-api/index.html?v=1.5#/document/post__db___purge)) removes the document and its associated extended attributes.
+- Sync Gateway document expiry (PUT [/{db}/{docid}](references/sync-gateway/admin-rest-api/index.html?v=1.5#/document/put__db___doc_)) will tombstone the active revision.
 
 ### Tombstones
 
-When this feature is enabled, mobile tombstones are not retained indefinitely. They will be purged based on the server's metadata purge interval. To ensure tombstones are replicated to clients, you should set the server's metadata purge interval based on your expected replication frequency (see the [$dbname.enable\_shared\_bucket\_access](../1.4/guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-enable_shared_bucket_access) reference).
+When this feature is enabled, mobile tombstones are not retained indefinitely. They will be purged based on the server's metadata purge interval. To ensure tombstones are replicated to clients, you should set the server's metadata purge interval based on your expected replication frequency (see the [$dbname.enable\_shared\_bucket\_access](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-enable_shared_bucket_access) reference).
 
 ### Upgrading
 
@@ -83,16 +83,16 @@ When this feature is enabled, mobile tombstones are not retained indefinitely. T
 
 In Sync Gateway 1.5 you have the ability to define multiple server URLs in the Sync Gateway configuration, and full support for SSL between Sync Gateway and Couchbase Server.
 
-- Sync Gateway Reference ([$dbname.server](../1.4/guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-server))
-- Sync Gateway Accelerator Reference ([$dbname.server](../1.4/guides/sync-gateway/accelerator.html#1.5/databases-foo_db-server), [cluster_config.server](../1.4/guides/sync-gateway/accelerator.html#1.5/cluster_config-server))
+- Sync Gateway Reference ([$dbname.server](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-server))
+- Sync Gateway Accelerator Reference ([$dbname.server](guides/sync-gateway/accelerator.html#1.5/databases-foo_db-server), [cluster_config.server](guides/sync-gateway/accelerator.html#1.5/cluster_config-server))
 
 ### Revs Limit lower limit
 
-The [databases.foo\_db.revs\_limit](../1.4/guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-revs_limit) property now has a minimal value. See the API reference for more detail.
+The [databases.foo\_db.revs\_limit](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-revs_limit) property now has a minimal value. See the API reference for more detail.
 
 ### Rev Tree endpoint
 
-The [/{db}/\_revtree/{doc}](../1.4/references/sync-gateway/admin-rest-api/index.html?v=1.5#/document/get__db___revtree__doc_) endpoint returns the revision tree in dot syntax for the specified document. This endpoint is not officially supported and should only be used for troubleshooting and debugging purposes.
+The [/{db}/\_revtree/{doc}](references/sync-gateway/admin-rest-api/index.html?v=1.5#/document/get__db___revtree__doc_) endpoint returns the revision tree in dot syntax for the specified document. This endpoint is not officially supported and should only be used for troubleshooting and debugging purposes.
 
 ## Sample App
 
