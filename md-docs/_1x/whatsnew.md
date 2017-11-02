@@ -5,7 +5,9 @@ permalink: whatsnew.html
 
 {% include landing.html %}
 
-## Sync Gateway 1.5
+## Couchbase Mobile 1.5
+
+> **Note:** The 1.5 release is a Sync Gateway only release. The latest release of Couchbase Lite remains 1.4.
 
 With Sync Gateway 1.5, you can seamlessly extend an existing Couchbase Server deployment to connect with remote edge devices that are occasionally disconnected or connected.
 
@@ -77,24 +79,24 @@ When this feature is enabled, mobile tombstones are not retained indefinitely. T
 
 > **Note:** Enabling convergence on your existing deployment (i.e XATTRs) is **not** reversible. It is recommended to test the upgrade on a staging environment before upgrading the production environment.
 
-## Additional Features
+### Additional Features
 
-### SSL and Multi-URL support
+#### SSL and Multi-URL support
 
 In Sync Gateway 1.5 you have the ability to define multiple server URLs in the Sync Gateway configuration, and full support for SSL between Sync Gateway and Couchbase Server.
 
 - Sync Gateway Reference ([$dbname.server](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-server))
 - Sync Gateway Accelerator Reference ([$dbname.server](guides/sync-gateway/accelerator.html#1.5/databases-foo_db-server), [cluster_config.server](guides/sync-gateway/accelerator.html#1.5/cluster_config-server))
 
-### Revs Limit lower limit
+#### Revs Limit lower limit
 
 The [databases.foo\_db.revs\_limit](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-revs_limit) property now has a minimal value. See the API reference for more detail.
 
-### Rev Tree endpoint
+#### Rev Tree endpoint
 
 The [/{db}/\_revtree/{doc}](references/sync-gateway/admin-rest-api/index.html?v=1.5#/document/get__db___revtree__doc_) endpoint returns the revision tree in dot syntax for the specified document. This endpoint is not officially supported and should only be used for troubleshooting and debugging purposes.
 
-## Sample App
+### Sample App
 
 The following tutorial demonstrates the extended attributes support introduced in Sync Gateway 1.5.
 
@@ -114,7 +116,7 @@ The following tutorial demonstrates the extended attributes support introduced i
 <br/>
 <br/>
 
-## Migrating from Bucket Shadowing
+### Migrating from Bucket Shadowing
 
 As of Sync Gateway 1.5, the Bucket Shadowing feature is deprecated and no longer supported. The following steps outline a recommended method for migrating from Bucket Shadowing to the latest version with interoperability between Couchbase Server SDKs and Couchbase Mobile.
 
@@ -126,7 +128,7 @@ As of Sync Gateway 1.5, the Bucket Shadowing feature is deprecated and no longer
 6. Monitor the Sync Gateway logs upon start-up.
 7. Replications with mobile clients (i.e Couchbase Lite) should now resume.
 
-## Couchbase Lite / Sync Gateway 1.4
+## Couchbase Mobile 1.4
 
 <div class="dp">
   <h3>Couchbase Lite</h3>
