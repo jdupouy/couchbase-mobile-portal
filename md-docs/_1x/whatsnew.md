@@ -62,6 +62,13 @@ When this feature is enabled, mobile tombstones are not retained indefinitely. T
 
 ### Upgrading
 
+In each of the scenarios described below, the upgrade process will trigger views in Couchbase Server to be re-indexed. During the re-indexing, operations that are dependent on those views will not be available. The main operations relying on views to be indexed are:
+
+- A user requests data that doesn't reside in the [channel cache](guides/sync-gateway/config-properties/index.html#1.5/databases-foo_db-cache-channel_cache_max_length).
+- A new channel or role is granted to a user in the [Sync Function](guides/sync-gateway/sync-function-api-guide/index.html).
+
+The unavailability of those operations may result in some requests not being process. The duration of the downtime will depend on the data set and frequency of replications with mobile clients.
+
 #### From 1.4 to 1.5 (xattrs disabled)
 
 - A rolling upgrade is supported: modify your load balancer's config to stop any HTTP traffic going to the node that will be upgraded, perform the upgrade on the given node and rebalance the traffic across all nodes. Repeat this operation for each node that needs to be upgraded.
@@ -74,8 +81,10 @@ When this feature is enabled, mobile tombstones are not retained indefinitely. T
      
 #### From 1.4 to 1.5 (xattrs enabled)
 
-- All nodes must be stopped (resulting in application downtime) during the upgrade.
+- This upgrade, if done directly, will result in application downtime because all the nodes must be taken offline during the upgrade.
 - The first node to be restarted should have the `import_docs=continuous` property enabled.
+
+That being said, it is possible to avoid this downtime by running the 2 upgrade paths mentioned above (first, an upgrade from 1.4 to 1.5, and second, an upgrade from 1.5 to 1.5 with xattrs enabled).
 
 > **Note:** Enabling convergence on your existing deployment (i.e XATTRs) is **not** reversible. It is recommended to test the upgrade on a staging environment before upgrading the production environment.
 
