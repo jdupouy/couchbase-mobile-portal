@@ -121,21 +121,6 @@ Mobile.
 
 You can download this release from [Couchbase.com](http://www.couchbase.com/nosql-databases/downloads#Couchbase_Mobile)
 
-## 1.3.1 release
-
-**Enhancements**
-
-- [**#1745**](https://github.com/couchbase/sync_gateway/issues/1745) Add retry when trying to connect to a server node in "warmup" state
-- [**#2005**](https://github.com/couchbase/sync_gateway/issues/2005) Tombstones don't grant access, don't propagate to users granted access by the doc
-- [**#2013**](https://github.com/couchbase/sync_gateway/issues/2013) Azure returns unsigned ID token in response to refresh request
-- [**#2038**](https://github.com/couchbase/sync_gateway/issues/2038) Uptake expvar refactoring for perf usage into 1.3.1
-- [**#2046**](https://github.com/couchbase/sync_gateway/issues/2046) Service install script enhancement for Ubuntu 16.04
-
-**Bugs**
-
-- [**#973**](https://github.com/couchbase/sync_gateway/issues/973) Can't initiate websocket connection
-- [**#1554**](https://github.com/couchbase/sync_gateway/issues/1554) Panic: send on closed channel when closing database
-- [**#1999**](https://github.com/couchbase/sync_gateway/issues/1999) Sync Gateway terminating changes requests
 
 ## 1.3 release
 
