@@ -1035,37 +1035,37 @@ paths:
         401:
           description: Authentication failed.  Unable to refresh token.
   /{db}/_revs_diff:
+    parameters:
+      - $ref: '#/parameters/db'
+    post:
+      tags:
+        - database
+      summary: Used by the replicator
+      description: Given a set of document/revision IDs, returns the subset of those that do not correspond to revisions stored in the database.
       parameters:
-        - $ref: '#/parameters/db'
-      post:
-        summary: Used by the replicator
-        description: Given a set of document/revision IDs, returns the subset of those that do not correspond to revisions stored in the database.
-        parameters:
-          - in: body
-            name: body
-            description: Request body
-            schema:
+        - in: body
+          name: body
+          description: Request body
+          schema:
+            type: object
+            additionalProperties:
+              type: array
+              items:
+                type: string
+              description: An array of revision IDs for that document.
+      responses:
+        200:
+          description: The request was successful
+          schema:
+            type: object
+            additionalProperties:
               type: object
               properties:
-                a_doc_id:
+                missing:
                   type: array
                   items:
                     type: string
-                  description: An array of revision IDs for that document.
-        responses:
-          200:
-            description: The request was successful
-            schema:
-              type: object
-              properties:
-                a_doc_id:
-                  type: object
-                  properties:
-                    missing:
-                      type: array
-                      items:
-                        type: string
-                      description: A list of revision IDs for that document (the ones that are not stored in the database).
+                  description: A list of revision IDs for that document (the ones that are not stored in the database).
   /{db}/:
     parameters:
       - $ref: '#/parameters/db'
