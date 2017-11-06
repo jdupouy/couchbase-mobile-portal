@@ -1049,6 +1049,8 @@ paths:
               properties:
                 a_doc_id:
                   type: array
+                  items:
+                    type: string
                   description: An array of revision IDs for that document.
         responses:
           200:
@@ -1061,6 +1063,8 @@ paths:
                   properties:
                     missing:
                       type: array
+                      items:
+                        type: string
                       description: A list of revision IDs for that document (the ones that are not stored in the database).
   /{db}/:
     parameters:
