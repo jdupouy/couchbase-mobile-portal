@@ -1044,7 +1044,6 @@ paths:
             description: Request body
             schema:
               type: object
-              additionalProperties: true
               properties:
                 a_doc_id:
                   type: array
